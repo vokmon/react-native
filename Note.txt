@@ -4,3 +4,17 @@ npm i -g create-react-native-app
 create-react-native-app globo
 npm install -g react-devtools
 react-devtools
+
+npm install --save react-nativation
+
+
+Create project for google api
+https://console.developers.google.com/apis/api/youtube.googleapis.com/overview?project=globo-app-221122
+
+Select / Enable api
+Generate API Key
+
+
+eslint
+tslint
+git supercharged

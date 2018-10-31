@@ -11,22 +11,22 @@ export class Home extends React.Component {
     header: null
   }
 
-   render() {
-     const { navigate } = this.props.navigation;
+  render() {
+    const { navigate } = this.props.navigation;
 
-     return (
-       <View style={styles.container}>
-        <Header message = 'Press to Login' />
+    return (
+      <View style={styles.container}>
+        <Header message='Press to Login' />
         <Hero />
-        <Menu navigate = {navigate} />
-       </View>
-     );
-   }
- }
+        <Menu navigate={navigate} />
+      </View>
+    );
+  }
+}
 
- const styles = StyleSheet.create({
-   container: {
-     flex: 1,
-     flexDirection: 'column'
-   },
- });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column'
+  },
+});

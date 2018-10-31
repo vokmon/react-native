@@ -17,7 +17,7 @@ export class Contact extends React.Component {
     }
   }
 
-  clearFields = () => this.setState({name:'', msg:'', email:''});
+  clearFields = () => this.setState({ name: '', msg: '', email: '' });
 
   sendMessage = () => {
     Alert.alert(this.state.name, this.state.msg);
@@ -27,11 +27,11 @@ export class Contact extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header message = 'Press to Login' />
-        <Text style={ styles.heading }>Contact Us</Text>
+        <Header message='Press to Login' />
+        <Text style={styles.heading}>Contact Us</Text>
         <TextInput
           style={styles.inputs}
-          onChangeText={(text) => this.setState({name: text})}
+          onChangeText={(text) => this.setState({ name: text })}
           value={this.state.name}
           multiline={true}
           numberOfLines={4}
@@ -39,18 +39,18 @@ export class Contact extends React.Component {
 
         <TextInput
           style={styles.inputs}
-          onChangeText={(text) => this.setState({email: text})}
+          onChangeText={(text) => this.setState({ email: text })}
           value={this.state.email}
         />
 
         <TouchableHighlight onPress={this.sendMessage} underlayColor='#31e981'>
-          <Text style = {styles.buttons}>
+          <Text style={styles.buttons}>
             Send Message
           </Text>
         </TouchableHighlight>
 
         <TouchableHighlight onPress={this.clearFields} underlayColor='#31e981'>
-          <Text style = {styles.buttons}>
+          <Text style={styles.buttons}>
             Reset Form
           </Text>
         </TouchableHighlight>

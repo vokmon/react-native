@@ -16,10 +16,10 @@ export class Header extends React.Component {
   render() {
     let display = this.state.isLoggedIn ? 'Sample User' : this.props.message;
     return (
-      <View style = {styles.headStyle}>
+      <View style={styles.headStyle}>
         <Image
           style={styles.logoStyle}
-          source= { require('./img/Globo_logo_REV.png')}
+          source={require('./img/Globo_logo_REV.png')}
         />
         <Text
           style={styles.headText}
