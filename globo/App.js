@@ -3,6 +3,7 @@ import { Home } from './app/views/Home';
 import { Contact } from './app/views/Contact';
 import { Video } from './app/views/Video';
 import { VideoDetail } from './app/views/VideoDetail';
+import { Register } from './app/views/Register';
 import { createStackNavigator } from 'react-navigation';
 
 const MyRoutes = createStackNavigator({
@@ -17,6 +18,9 @@ const MyRoutes = createStackNavigator({
   },
   VideoDetailRT: {
     screen: VideoDetail
+  },
+  RegisterRT: {
+    screen: Register
   }
 },
   {
