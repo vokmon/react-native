@@ -1,20 +1,59 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, AsyncStorage, Alert } from 'react-native';
 
 export class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isLoggedIn: false };
+    this.state = { 
+      isLoggedIn: false,
+      loggedUser: false
+    };
+  }
+
+  refresh = () => {
+    this.componentDidMount();
   }
 
   toggleUser = () => {
-    this.setState(previousState => {
-      return { isLoggedIn: !previousState.isLoggedIn };
+    if (this.state.isLoggedIn) {
+      AsyncStorage.setItem('userLoggedIn', 'none', (err, result) => {
+        this.setState({
+          isLoggedIn: false,
+          loggedUser: false
+        });
+        Alert.alert('User logged out');
+      });
+    }
+    else {
+      this.props.navigate('LoginRT', {
+          onBack: () => this.refresh()
+        }
+      );
+    }
+  }
+
+  componentDidMount() {
+    AsyncStorage.getItem('userLoggedIn', (err, result) => {
+      if (result === 'none') {
+        console.log('NONE');
+      }
+      else if (result == null) {
+        AsyncStorage.setItem('userLoggedIn', 'none', (err, result) => {
+          console.log('Set user to NONE');
+        });
+      }
+      else {
+        console.log(`logged in ${result}`)
+        this.setState({
+          isLoggedIn: true,
+          loggedUser: result,
+        });
+      }
     });
   }
 
   render() {
-    let display = this.state.isLoggedIn ? 'Sample User' : this.props.message;
+    let display = this.state.isLoggedIn ? this.state.loggedUser : this.props.message;
     return (
       <View style={styles.headStyle}>
         <Image

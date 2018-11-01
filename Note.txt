@@ -1,5 +1,5 @@
 
-SET REACT_NATIVE_PACKAGER_HOSTNAME=10.200.63.98
+SET REACT_NATIVE_PACKAGER_HOSTNAME=10.200.61.39
 npm i -g create-react-native-app
 create-react-native-app globo
 npm install -g react-devtools

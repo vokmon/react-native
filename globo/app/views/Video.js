@@ -18,7 +18,6 @@ export class Video extends React.Component {
     try {
       const response = await fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&q=pluralsight&key=AIzaSyDTzRqxq4Mm0cInB9CFAGtrJjS0OuGnKAU');
       const responseJson = await response.json();
-      console.log(responseJson);
       if (responseJson.items) {
         this.setState({
           listLoaded: true,
