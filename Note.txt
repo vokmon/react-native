@@ -17,3 +17,6 @@ Generate API Key
 
 npm install react-native-render-html --save
 https://wordpress.com/
+
+https://expo.io/
+https://expo.io/tools#xde
