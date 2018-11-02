@@ -13,11 +13,11 @@ export class BlogDetail extends React.Component {
     this.state = { postLoaded: false };
   };
 
-  componentDidMount() {
-    const blogId = this.props.navigation.getParam('blogId', 'NO BLOG');
-    return fetch(`https://public-api.wordpress.com/rest/v1.1/sites/myglobomantics.wordpress.com/posts/${blogId}`)
-    .then((response) => response.json())
-    .then((responseJson) => {
+  async getBlogDetail () {
+    try {
+      const blogId = this.props.navigation.getParam('blogId', 'NO BLOG');
+      const response = await fetch(`https://public-api.wordpress.com/rest/v1.1/sites/myglobomantics.wordpress.com/posts/${blogId}`)
+      const responseJson = await response.json();
       this.setState({
         postLoaded: true,
         postTitle: responseJson.title,
@@ -25,10 +25,29 @@ export class BlogDetail extends React.Component {
         postContent: responseJson.content,
         postID: responseJson.ID
       });
-    })
-    .catch((error) => {
+    }
+    catch(error) {
       console.error(error);
-    });
+    }
+  }
+
+  componentDidMount() {
+    this.getBlogDetail();
+    // const blogId = this.props.navigation.getParam('blogId', 'NO BLOG');
+    // return fetch(`https://public-api.wordpress.com/rest/v1.1/sites/myglobomantics.wordpress.com/posts/${blogId}`)
+    // .then((response) => response.json())
+    // .then((responseJson) => {
+    //   this.setState({
+    //     postLoaded: true,
+    //     postTitle: responseJson.title,
+    //     postImage: responseJson.featured_image,
+    //     postContent: responseJson.content,
+    //     postID: responseJson.ID
+    //   });
+    // })
+    // .catch((error) => {
+    //   console.error(error);
+    // });
   }
 
   goBack=() => {
