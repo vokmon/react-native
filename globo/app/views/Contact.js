@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, Alert, TextInput } from 'react-native';
 import { Header } from '../sections/Header';
-import { StackNavigator } from 'react-navigation';
 
 export class Contact extends React.Component {
   static navigationOptions = {

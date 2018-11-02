@@ -15,6 +15,5 @@ Select / Enable api
 Generate API Key
 
 
-eslint
-tslint
-git supercharged
+npm install react-native-render-html --save
+https://wordpress.com/
