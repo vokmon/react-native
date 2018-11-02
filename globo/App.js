@@ -6,10 +6,10 @@ import { VideoDetail } from './app/views/VideoDetail';
 import { Register } from './app/views/Register';
 import { Login } from './app/views/Login';
 import { Quiz } from './app/views/Quiz';
+import { QuizFinish } from './app/views/QuizFinish.js';
 import { Blog } from './app/views/Blog';
 import { BlogDetail } from './app/views/BlogDetail';
-import { QuizFinish } from './app/views/QuizFinish.js';
-
+import { About } from './app/views/About';
 import { createStackNavigator } from 'react-navigation';
 
 const MyRoutes = createStackNavigator({
@@ -43,6 +43,9 @@ const MyRoutes = createStackNavigator({
   BlogDetailRT: {
     screen: BlogDetail
   },
+  AboutRT: {
+    screen: About
+  }
 },
   {
     initialRouteName: 'HomeRT'
